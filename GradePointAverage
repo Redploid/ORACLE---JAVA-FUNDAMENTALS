@@ -1,0 +1,64 @@
+/**
+ * Programa: GalToLit_Scanner
+ * Autor: Italo Freitas
+ * GitHub: @redploid
+ * Versão: 1, Julho 2023
+ * O Programa solicita usuario (admin) e senha (senha123)
+ * Após login no sistema o programa solicita dados estudantis para calculo de media escolar
+ */
+package GradePointAverage;
+import java.util.Scanner;
+
+public class GradePointAverage {
+	
+	public String login;
+	public String senha;
+	public String x;
+	
+	public GradePointAverage() {
+	login();
+	if(login.equals("admin")&&(senha.equals("senha123"))) {
+		System.out.println("login e senha corretos! ");
+		System.out.print("Digite o nome do aluno: ");
+		Scanner student = new Scanner(System.in);
+		String aluno = student.next();
+		double x = media();
+		System.out.print("A media do aluno " + aluno +" foi: "+x);
+		}
+	else {
+		System.out.print("Login ou senha incorretos!");
+		System.out.print("Por favor, reinicie o sistema.");
+		}
+	}
+	
+	public String login() {
+	System.out.print("Login: ");
+	Scanner in = new Scanner(System.in);
+	login=in.next();
+	
+	System.out.print("Senha: ");
+	Scanner inn = new Scanner(System.in);
+	senha =in.next();
+	return login;
+	}
+	
+	public double media() {
+		System.out.println("Nota do primeiro trimestre: ");
+		Scanner a = new Scanner(System.in);
+		double n1 = a.nextDouble();
+		System.out.println("Nota do segundo trimestre: ");
+		Scanner b = new Scanner(System.in);
+		double n2 = b.nextDouble();
+		System.out.println("Nota do terceiro trimestre: ");
+		Scanner c = new Scanner(System.in);
+		double n3 = c.nextDouble();
+		double media=(n1+n2+n3)/3;
+		return media;
+	}
+
+	public static void main(String[] args) {
+	
+		GradePointAverage user = new GradePointAverage();
+	}
+
+}
