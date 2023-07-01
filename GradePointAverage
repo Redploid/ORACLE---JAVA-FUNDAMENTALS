@@ -1,5 +1,5 @@
 /**
- * Programa: GalToLit_Scanner
+ * Programa: GradePointAverage
  * Autor: Italo Freitas
  * GitHub: @redploid
  * Versão: 1, Julho 2023
@@ -22,7 +22,7 @@ public class GradePointAverage {
 		System.out.print("Digite o nome do aluno: ");
 		Scanner student = new Scanner(System.in);
 		String aluno = student.next();
-		double x = media();
+		float x = media();
 		System.out.print("A media do aluno " + aluno +" foi: "+x);
 		}
 	else {
@@ -42,17 +42,17 @@ public class GradePointAverage {
 	return login;
 	}
 	
-	public double media() {
+	public float media() {
 		System.out.println("Nota do primeiro trimestre: ");
 		Scanner a = new Scanner(System.in);
-		double n1 = a.nextDouble();
+		float n1 = a.nextFloat();
 		System.out.println("Nota do segundo trimestre: ");
 		Scanner b = new Scanner(System.in);
-		double n2 = b.nextDouble();
+		float n2 = b.nextFloat();
 		System.out.println("Nota do terceiro trimestre: ");
 		Scanner c = new Scanner(System.in);
-		double n3 = c.nextDouble();
-		double media=(n1+n2+n3)/3;
+		float n3 = c.nextFloat();
+		float media=(n1+n2+n3)/3;
 		return media;
 	}
 
